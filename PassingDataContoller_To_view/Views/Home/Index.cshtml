@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@ViewData["var1"]
+<br />
+@ViewData["var2"]
+<br />
+@{
+    <h1>Array list</h1>
+    foreach (var item in (string[])ViewData["var3"])
+    {
+
+        <h3>@item</h3>
+    }
+}
+
+@{
+    <h1>list</h1>
+    foreach (var item in (List<string>)ViewData["var4"])
+    {
+        <h3>@item</h3>
+    }
+}
+
+@{
+    var a = (PassingDataContoller_To_view.Models.Student)ViewData["var5"];
+    <h2>@a.name</h2>
+    <h2>@a.gender</h2>
+    <h2>@a.standard</h2>
+}
